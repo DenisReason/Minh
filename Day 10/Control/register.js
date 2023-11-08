@@ -1,7 +1,6 @@
 import express, { json } from "express"
 import { CreateUserAccount } from "../Model/ConnectToDb.js"
 import bcrypt from 'bcrypt'
-import jsonparser from 'jsonparser'
 export const registerRouter = express.Router()
 
 registerRouter.use(express.json())

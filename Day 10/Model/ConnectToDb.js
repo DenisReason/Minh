@@ -10,7 +10,8 @@ export const GetuserByUsername = async (username) => {
         const collection = db.collection("UsersAccount")
         const data = await collection.findOne({ "username": username })
         Client.close()
-        res.json(data)
+        console.log(data)
+        return data
     } catch (error) {
         console.log(error);
     }
