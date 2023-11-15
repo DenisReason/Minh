@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import axios from 'axios';
 import React,{useState }from 'react';
 import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
@@ -33,11 +34,29 @@ export default function App() {
       <TextInput style={styles.input} placeholder='Password' onChangeText={setPassword} value={password}></TextInput>
       <Button onPress={()=>{reqLogintoServer({username:usersname,password:password},settoken)}} title='Login'></Button>
       {token && (<Text>{(JSON.stringify(token).replaceAll('"',""))}</Text>)}
+=======
+import { StatusBar } from 'expo-status-bar';
+import react, { useState } from 'react';
+import { StyleSheet, Text, View, Button} from 'react-native';
+
+
+export default function App() {
+  const [count, setcount] = useState(0)
+  return (
+    <View style={styles.container}>
+      <Button onPress={()=>{
+        setcount(count+1)
+      }} title='Increase'></Button>
+      <Text>{count}</Text>
+>>>>>>> 019ba310eb9cfd315441e97df0288cba4e701fc1
     </View>
   );
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 019ba310eb9cfd315441e97df0288cba4e701fc1
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -45,6 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+<<<<<<< HEAD
   input:{
     borderColor:"black",
     borderWidth:1,
@@ -52,4 +72,6 @@ const styles = StyleSheet.create({
     width: 300,
     padding:5
   }
+=======
+>>>>>>> 019ba310eb9cfd315441e97df0288cba4e701fc1
 });
