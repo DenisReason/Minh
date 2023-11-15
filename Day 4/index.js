@@ -6,7 +6,7 @@ const app = express()
 app.use(TeacherRouter)
 app.use(StudentsRouter)
 
-
-app.listen(3000,(req, res)=>{
+const PORT = process.env.PORT || 3000
+app.listen(PORT,(req, res)=>{
    console.log("App is lisenning on port 3000")
 })
