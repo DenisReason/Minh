@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 web:nodemon index.js
-=======
-web: nodemon ./View/index.js
->>>>>>> 019ba310eb9cfd315441e97df0288cba4e701fc1
