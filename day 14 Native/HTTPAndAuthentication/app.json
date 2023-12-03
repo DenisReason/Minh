@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "HTTPAndAuthentication",
+    "slug": "HTTPAndAuthentication",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "name": "My Web App",
+        "description": "A description of my web app",
+        "orientation": "any",
+        "startUrl": "/",
+        "scope": "/",
+        "backgroundColor": "#ffffff",
+        "themeColor": "#000000",
+        "serviceWorker": {
+          "url": "expo-service-worker.js",
+          "offlineCacheImages": [
+            "./assets/icon.png"
+          ]
+        },
+        "manifest": {
+          "start_url": "/",
+          "display": "standalone",
+          "background_color": "#ffffff",
+          "theme_color": "#000000"
+        },
+        "meta": {
+          "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no"
+        }
+      }
+    }
+  }
+}
