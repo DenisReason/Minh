@@ -6,11 +6,30 @@ import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import handleLogin, { setJwt } from './Control/Login';
 import axios from 'axios';
+import handleRegister from './Control/Register';
 
 const url = "https://day10-daa5ba58a880.herokuapp.com/login"
 const url2 = "http://localhost:3000/login"
 
 
+
+const Register = ()=>{
+  const navigation = useNavigation()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [state, Setstate] = useState('')
+
+
+  return (
+    <View style={styles.container}>
+      <TextInput placeholder="Username" onChangeText={setUsername} style={styles.input}></TextInput>
+      <TextInput placeholder="Password" onChangeText={setPassword} style={styles.input}></TextInput>
+      <Button onPress={async () => { await handleRegister({ username: username, password: password }, navigation, Setstate) ;console.log("Press!!");}} title="Register"></Button>
+      {state&& (<Text>{state}</Text>)}
+      <Text  style={styles.Linkcolor} onPress={()=>{navigation.navigate("Login")}} >Have Account? Login Here</Text>
+    </View>
+  )
+}
 const Login = () => {
   const navigation = useNavigation()
   const [username, setUsername] = useState('')
@@ -52,6 +71,7 @@ const Login = () => {
       <TextInput placeholder="Username" onChangeText={setUsername} style={styles.input}></TextInput>
       <TextInput placeholder="Password" onChangeText={setPassword} style={styles.input}></TextInput>
       <Button onPress={async () => { await handleLogin({ username: username, password: password }, setToken, navigation) ;console.log("Press!!");}} title="Login"></Button>
+      <Text style={styles.Linkcolor} onPress={()=>{navigation.navigate(Register)}}>Register Here</Text>
     </View>
   )
 }
@@ -72,6 +92,7 @@ export default function App() {
       <stack.Navigator>
         <stack.Screen name="Login" component={Login} />
         <stack.Screen name="Home" component={Userhome} />
+        <stack.Screen name="Register" component={Register}/>
       </stack.Navigator>
     </NavigationContainer>
   )
@@ -89,5 +110,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     margin: 5,
+  },
+  Linkcolor:{
+    color:"blue",
+
   }
+  
 });
